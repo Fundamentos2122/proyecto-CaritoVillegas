@@ -1,0 +1,221 @@
+
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html, body{
+    margin: .5em;
+}
+
+body{
+    background-image: url("/Imagenes/FONDO1.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headercen{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 20%;
+    position: relative;
+    left: 39%;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    align-items: flex-end;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    gap: 0.2EM;
+}
+
+
+
+.menu{
+    width: 100%;
+    padding: -3em;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.navitem{
+    padding: 1em;
+    font-size: 1em;
+    text-align: center;
+    color: black;
+}
+
+
+.container{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    padding: 2em;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+   /* margin: 1em;*/
+
+}
+
+.pdato {
+    margin: 0;
+    padding: .5em;
+    width: 100%;
+    height: 2em;
+    border: 1px solid black;
+    border-radius: 2em;
+    
+}
+
+.subcontainer1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.subcontainer2{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subcontainer2 p{
+    width: 100%;
+    height: 100%;
+    border: solid 1px black;
+}
+
+.editarB{
+    margin-top: 2em;
+    width: 5em;
+}
+
+
+
+@media(min-width:780px){
+    *{
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    html, body{
+        margin: 1em;
+    }
+    
+    body{
+        background-image: url("/Imagenes/FONDO1.png");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .headercen{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+        align-items: flex-end;
+        position: fixed;
+        right: 1em;
+        top: 1em;
+        gap: 0.2em;
+    }
+
+    
+    .logo{
+        width: 10em;
+        position: relative;
+        left: -4%;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .menu{
+        width: 100%;
+        padding: 10px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .navitem{
+        padding: 1em;
+        font-size: 1.5em;
+        text-align: center;
+        color: black;
+    }
+    
+
+    .container{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border-radius: 1em;
+        padding: 2em;
+        background-position: center center;
+        display: flex;
+        flex-direction: row;
+        padding-left: 6em;
+
+    }
+    .subcontainer1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pdato {
+        margin: 0;
+        padding: .5em;
+        width: 30em;
+        height: 2em;
+        border: 1px solid black;
+        border-radius: 2em;
+        
+    }
+
+    .editarB{
+        margin-top: 2em;
+        width: 5em;
+    }
+
+}
