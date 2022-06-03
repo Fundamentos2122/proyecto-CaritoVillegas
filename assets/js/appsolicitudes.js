@@ -1,14 +1,13 @@
 
-const formTweet = document.getElementById("form-tweet");
+const formTweet = document.getElementById("form-noticia");
 const tweetList = document.getElementById("gatos");
 const modalTweet = document.getElementById("modalTweet");
 
 //editar
 const idEdit = document.getElementById("form-edit-id");
-const id_gatoEdit = document.getElementById("form-edit-id_gato");
-const id_userEdit = document.getElementById("form-edit-id_user");
-const fechaEdit = document.getElementById("form-edit-fecha");
-const aceptadaEdit = document.getElementById("form-edit-aceptada");
+const tituloEdit = document.getElementById("form-edit-titulo");
+const descripcionEdit = document.getElementById("form-edit-descripcion");
+const completaEdit = document.getElementById("form-edit-completa");
 const btnSaveEdit = document.getElementById("btnSaveEdit");
 
 //eliminar
@@ -21,16 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     getTweets();
 
-    let modals = document.getElementsByClassName("modal");
-
-    for(var i = 0; i < modals.length; i++) {
-        modals[i].addEventListener("click", function(e) {
-            if(e.target === this){
-                this.classList.remove("show");
-            }
-        });
-    }
-
     
 });
 
@@ -42,14 +31,14 @@ function paintTweets(list) {
         html += 
         `<div class="card" id="${list[i].id}">
                 <div class="card-text">
-                    <p>ID DE GATO:    ${list[i].id_gato}</p>
-                    <p>ID DE USUARIO:    ${list[i].id_user}</p>
-                    <p>FECHA:    ${list[i].fecha}</p>
+                    <p>${list[i].id_gato}</p>
+                    <p>${list[i].id_user}</p>
+                    <p>${list[i].fecha}</p>
                 </div>
 
                 <div class="options">
                     <button class="btn-option" onclick="editTweet(${list[i].id})">
-                        ACEPTAR
+                        aceptar
                     </button>
                     
                 </div>
@@ -97,12 +86,12 @@ function editTweet(id) {
             if (this.status === 200) {
                 let tweet = JSON.parse(this.responseText);
                 console.log(this.responseText);
-                idEdit.value = tweet.id;
-                id_gatoEdit.value = tweet.id_gato;
-                id_userEdit.value = tweet.id_user;
-                //fechaEdit.value = tweet.fecha;
-                aceptadaEdit.value = tweet.aceptada;
-                modalTweet.classList.add("show");
+                /*idEdit.value = tweet.id;
+                /*tituloEdit.value = tweet.titulo;
+                descripcionEdit.value = tweet.descripcion;
+                completaEdit.value = tweet.completa;*/
+
+               // modalTweet.classList.add("show");
             }
             else {
                 console.log("Error");
