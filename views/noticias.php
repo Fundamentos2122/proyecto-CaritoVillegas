@@ -22,7 +22,7 @@
     </div>
 
     <div class="login">
-        <button class="boton" name="ing" type="button" role="link" onclick="window.location='cuenta.php'">Solicitudes</button>
+        <button class="boton" name="ing" type="button" role="link" onclick="window.location='login.php'">Solicitudes</button>
         <button class="boton" name="ing" type="button" role="link" onclick="window.location='../index.php'">Salir</button>
     </div>
 

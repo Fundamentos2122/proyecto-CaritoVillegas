@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
             }
             /*var_dump($noticias);
             echo $noticias;*/
-            echo json_encode($solicitudes);
+            echo json_encode($solicitud);
         }
 
         catch(PDOException $e){
@@ -79,7 +79,7 @@ else if($_SERVER["REQUEST_METHOD"] === "POST"){
             postSolicitud( $_POST["id_gato"], $_POST["id_user"], $_POST["fecha"],  true);
         }
         else if($_POST["_method"] === "PUT"){
-            putSolicitud($_POST["id"],$_POST["id_gato"], $_POST["id_user"], $_POST["aceptada"],true);
+            putNoticia($_POST["id"], $_POST["titulo"], $_POST["descripcion"],$_POST["completa"],true);
         }
     }
     else if(array_key_exists("id",$_POST)){
@@ -90,11 +90,11 @@ else if($_SERVER["REQUEST_METHOD"] === "POST"){
     exit();
 }
 
-function postSolicitud($id_gato, $id_user,$fecha, $redirect){
+function postSolicitud($id_gato, $id_user, $fecha, $redirect){
     global $connection;
 
     try{
-        $query = $connection->prepare('INSERT INTO solicitudes VALUES(NULL, :id_gato, :id_user, :fecha, 1 )');
+        $query = $connection->prepare('INSERT INTO solicitudes VALUES(NULL, :id_gato, :id_user, :fecha, 0 )');
         $query->bindParam(':id_gato', $id_gato, PDO::PARAM_STR);
         $query->bindParam(':id_user', $id_user, PDO::PARAM_STR);
         $query->bindParam(':fecha', $fecha, PDO::PARAM_STR);
@@ -106,7 +106,7 @@ function postSolicitud($id_gato, $id_user,$fecha, $redirect){
         }
         else {
             if ($redirect) {
-                header('Location: http://localhost/BolitasdePelo/views/galeria.php');
+                header('Location: http://localhost/BolitasdePelo/views/solicitudes_admin.php');
             }
             else {
                 echo "Registro guardado";
@@ -120,14 +120,14 @@ function postSolicitud($id_gato, $id_user,$fecha, $redirect){
 
 }
 
-function putSolicitud($id, $id_gato, $id_user,  $adoptada,  $redirect){
+function putNoticia($id, $titulo, $descripcion, $completa,  $redirect){
     //var_dump($id);
     global $connection;
     try{
-        $query = $connection->prepare('UPDATE solicitudes SET id_gato = :id_gato, id_user = :id_user, aceptada= :aceptada WHERE id = :id');
-        $query->bindParam(':id_gato', $id_gato, PDO::PARAM_STR);
-        $query->bindParam(':id_user', $id_user, PDO::PARAM_STR);
-        $query->bindParam(':aceptada', $adoptada, PDO::PARAM_STR);
+        $query = $connection->prepare('UPDATE noticias SET titulo = :titulo, descripcion = :descripcion, completa = :completa WHERE id = :id');
+        $query->bindParam(':titulo', $titulo, PDO::PARAM_STR);
+        $query->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
+        $query->bindParam(':completa', $completa, PDO::PARAM_STR);
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
 
@@ -136,7 +136,7 @@ function putSolicitud($id, $id_gato, $id_user,  $adoptada,  $redirect){
         }
         else {
             if ($redirect) {
-                header('Location: http://localhost/BolitasdePelo/views/cuenta_admin.php');
+                header('Location: http://localhost/BolitasdePelo/views/noticias_admin.php');
             }
             else {
                 echo "Registro guardado";
@@ -163,7 +163,7 @@ function deleteNoticia($id,$redirect){
         }
         else {
             if ($redirect) {
-                header('Location: http://localhost/BolitasdePelo/views/galeria.php');
+                header('Location: http://localhost/BolitasdePelo/views/noticias_admin.php');
             }
             else {
                 echo "Registro guardado";

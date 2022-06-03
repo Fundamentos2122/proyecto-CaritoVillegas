@@ -35,6 +35,7 @@
                     <input type="text" name="id_user" placeholder="id de usuario">
                     <input type="text" name="id_gato" placeholder="escribe la id de arriba ">
                     <input type="text" name="fecha" placeholder="fecha">
+                    
                     <input type="submit" value="Adoptar">
                 </form>
             <div class="gato" id="gatos">

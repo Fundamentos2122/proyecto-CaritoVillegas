@@ -32,10 +32,7 @@
 
         </div> 
     </div>  
-    <?php 
-       /* include("modal_editarNoticia.php");*/
-        include("modal_adoptar.php"); 
-    ?>  
-    <script src="../assets/js/appsolicitudes.js"></script>
+            
+        <script src="../assets/js/appsolicitudes.js"></script>
 </body>
 </html>
