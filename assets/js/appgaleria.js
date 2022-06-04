@@ -9,7 +9,6 @@ const tituloEdit = document.getElementById("form-edit-titulo");
 const descripcionEdit = document.getElementById("form-edit-descripcion");
 const completaEdit = document.getElementById("form-edit-completa");
 const btnSaveEdit = document.getElementById("btnSaveEdit");
-const gato = document.getElementById("id_gato");
 
 //eliminar
 const modalDeleteTweet = document.getElementById("modalDeleteTweet");
@@ -98,8 +97,7 @@ function editTweet(id) {
             if (this.status === 200) {
                 let tweet = JSON.parse(this.responseText);
                 console.log(this.responseText);
-                idEdit.value = tweet.nombre;
-                gato.value=tweet.id;
+                idEdit.value = tweet.id;
                 /*tituloEdit.value = tweet.titulo;
                 descripcionEdit.value = tweet.descripcion;
                 completaEdit.value = tweet.completa;*/

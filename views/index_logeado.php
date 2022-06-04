@@ -8,7 +8,7 @@
     <title>Bolitas de Pelo</title>
 </head>
 <body>
-   <?php include("./layout/layaut2.php"); ?> 
+    <?php include("./layout/layaut.php"); ?> 
     <div class="header">
         <div class="headercen">
             <a href="index_logeado.php"><img class="logo" src="../Imagenes/LOGO3.png" alt=""></a>

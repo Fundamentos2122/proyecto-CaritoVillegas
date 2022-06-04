@@ -8,7 +8,7 @@
     <title>Registro</title>
 </head>
 <body>
-    
+    <?php include("./layout/layaut.php"); ?> 
     <div class="container">
         <img class="logo" src="../Imagenes/LOGO3.png" alt="">
         <form class="canteiner" action="../controllers/usersController.php" method="POST" autocomplete="off"  enctype="multipart/form-data" >

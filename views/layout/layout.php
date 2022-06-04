@@ -1,17 +1,11 @@
 <?php 
     //Indicamos que haremos uso de la sesión
-    session_start();
+    /*session_start();
 
     if(!array_key_exists("username", $_SESSION)) {
-        
-        header('Location: http://localhost/BolitasdePelo/');
+        header('Location: http://localhost/twitter/');
         exit();
-    }
-    if($_SESSION["type"]!=="admin"){
-        var_dump($_SESSION);
-        header('Location: http://localhost/BolitasdePelo/index_logeado.php');
-        exit();
-    }
+    }*/
 
 ?>
 
