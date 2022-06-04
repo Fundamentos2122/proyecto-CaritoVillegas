@@ -2,6 +2,7 @@
 
 include("../models/DB.php");
 include("../models/Solicitudes.php");
+include("../models/Solicitudinfo.php");
 
 try{
     $connection = DBConnection::getConnection();
@@ -40,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
     else{
         //Obtener todos los registros
         try{
-            $query = $connection->prepare('SELECT * FROM solicitudes WHERE aceptada = 1');
+            $query = $connection->prepare('SELECT solicitudes.id, solicitudes.fecha, gatos.nombre, users.nombres FROM `solicitudes` INNER JOIN `gatos` ON solicitudes.id_gato=gatos.id INNER JOIN `users` ON solicitudes.id_user=users.id;');
             $query->execute();
     
             $noticias = array();//Genera arreglo vacio
@@ -48,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
     
             while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 
-                $solicitud = new Solicitudes($row["id"],$row["id_gato"],$row["id_user"],$row["fecha"],$row["aceptada"]);    
+                $solicitud = new Solicitudinfo($row["id"],$row["fecha"],$row["nombre"],$row["nombres"]);    
     
                 $solicitudes[] = $solicitud->getArray();//Push
             }

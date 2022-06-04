@@ -8,7 +8,7 @@
                 <form action="../controllers/galeriaController.php" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="" id="form-delete-id">
-                    <p>¿Seguro que desea elminiar este gato?</p>
+                    <p>¿Seguro que desea eliminar este gato?</p>
                     <input type="submit" value="Aceptar">
                 </form>
             </div>
