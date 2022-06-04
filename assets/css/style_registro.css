@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body{
+    margin: 1em;
+}
+
+body{
+    background-image: url("../Imagenes/FONDO1.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container{
+    padding: 3em;
+    width: 95%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    align-items: center;
+}
+
+.logo{
+    width: 60%;
+    padding-bottom: 1em;
+}
+
+.canteiner{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.inp{
+    width: 80%;
+    margin-bottom: 3em;
+    border-radius: .5em;
+    height: 3em;
+}
+
+.boton{
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.trato{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+
+@media(min-width:780px){
+    *{
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    html, body{
+        margin:.5em;
+    }
+
+    body{
+        background-image: url("/Imagenes/FONDO1.png");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .container{
+        padding: 2em;
+        width: 40%;
+        height: 90%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1em;
+        align-items: center;
+    }
+
+    .logo{
+        width: 35%;
+        padding-bottom: .5em;
+    }
+
+    .canteiner{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .inp{
+        width: 70%;
+        margin-bottom: 2em;
+        border-radius: .5em;
+    }
+
+    .boton{
+        margin-top: .5em;
+        margin-bottom: 1em;
+    }
+
+    .trato{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+
+}
